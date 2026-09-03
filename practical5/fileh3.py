@@ -1,0 +1,25 @@
+#using r+ , w+ , a+ to read and write file
+
+print("Using r+----------------------------------")
+file = open("name.txt", "r+")
+content = file.read()
+print("File Content:\n", content)
+file.close()
+
+print("\n")
+print("Using w+----------------------------------")
+file1 = open("name.txt", "w+")
+file1.write("This is the 1st content inserted.")
+file1.seek(0)
+content1 = file1.read()
+print("File Content after write:\n", content1)
+file1.close()
+
+print("\n")
+print("Using a+----------------------------------")
+file2 = open("name.txt", "a+")
+file2.write("\nThis is another appended line.")
+file2.seek(0)
+content2 = file2.read()
+print("File Content after append:\n", content2)
+file2.close()
