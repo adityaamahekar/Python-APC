@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Login Validation</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background: white;
+            padding: 35px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #ccc;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            width: 98%;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>User Login</h2>
+        <p>Login Validation Using Regex</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="username"
+                   placeholder="Enter Username" required>
+
+            <input type="password" name="password"
+                   placeholder="Enter Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        {% if message %}
+            <p class="{% if success %}success{% else %}error{% endif %}">
+                {{ message }}
+            </p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
