@@ -55,7 +55,7 @@ Tkinter is included with many Python installations.
 **Step 1:** Clone the repository.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Advanced-Python-Programming.git
+git clone https://github.com/adityaamahekar/Python-APC.git
 ```
 
 **Step 2:** Open the project folder in VS Code.
